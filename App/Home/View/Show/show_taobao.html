@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body style="width:100%">
+<div id="ding_table" style="width:90%">
+  <table class="table" style="margin-top:50px;margin-left:50px">
+    <caption style="text-align:center;font-size:20px;">淘宝订单展示</caption>
+    <thead>
+      <tr>
+        <th>产品名称</th>
+        <th>下单日期</th>
+        <th>订单金额</th>
+        <th>订单号</th>
+        <th>订单类别</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="active">
+        <td>产品1</td>
+        <td>23/11/2016</td>
+        <td>待发货</td>
+        <td>11111</td>
+        <td>衣服</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+      <tr class="success">
+        <td>产品2</td>
+        <td>10/11/2016</td>
+        <td>发货中</td>
+        <td>2222</td>
+        <td>电子产品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+
+      </tr>
+      <tr class="warning">
+        <td>产品3</td>
+        <td>20/10/2016</td>
+        <td>待确认</td>
+        <td>3333</td>
+        <td>洗护用品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+      <tr class="danger">
+        <td>产品4</td>
+        <td>20/10/2016</td>
+        <td>已退货</td>
+        <td>4444</td>
+        <td>化妆品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+
+
+      <tr class="active">
+        <td>产品5</td>
+        <td>23/11/2016</td>
+        <td>待发货</td>
+        <td>11111</td>
+        <td>衣服</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+      <tr class="success">
+        <td>产品6</td>
+        <td>10/11/2016</td>
+        <td>发货中</td>
+        <td>2222</td>
+        <td>电子产品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+      <tr class="warning">
+        <td>产品7</td>
+        <td>20/10/2016</td>
+        <td>待确认</td>
+        <td>3333</td>
+        <td>洗护用品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+      </tr>
+      <tr class="danger">
+        <td>产品8</td>
+        <td>20/10/2016</td>
+        <td>已退货</td>
+        <td>4444</td>
+        <td>化妆品</td>
+        <td>
+          <button type="button"   class="btn btn-xs btn-link " onclick="del(this)"> 删除</button>  </td>
+      </tr>
+
+  </table>
+</div>
+<div id="footer" style="width:500px;float:right">
+	<ul style="list-style:none;font-size:18px">
+	<li class="ul_li"><a href="#">&lt;</a></li>
+	<li class="ul_li"><a href="#">1</a></li>
+	<li class="ul_li"><a href="#">2</a></li>
+	<li class="ul_li"><a href="#">3</a></li>
+	<li class="ul_li"><a href="#">4</a></li>
+	<li class="ul_li"><a href="#">5</a></li>
+	<li class="ul_li"><a href="#">&gt;</a></li>
+</ul>
+</div>
+  <script  type="text/javascript">
+    function del(obj)
+    {
+      var tr=obj.parentNode.parentNode;
+      tr.parentNode.removeChild(tr);
+    }
+  </script>
+  <script >
+  			var list = document.getElementsByClassName("ul_li");
+
+  			for(var i = 0;i<list.length;i++){
+  			list[i].onclick = function(){
+  			list[0].style.background="white";
+  			list[1].style.background="white";
+  			list[2].style.background="white";
+  			list[3].style.background="white";
+  			list[4].style.background="white";
+  			list[5].style.background="white";
+  			list[6].style.background="white";
+  			this.style.background = "red";
+  		}
+  			}
+  	</script>
+
+</body>
+
+</html>

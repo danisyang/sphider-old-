@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <div id="person_info">
+    <div id="head_info">欢迎<span style="color:red;">admin ，</span>您上次登陆时间是<span>2017年9月5号</span></div>
+    <hr>
+    <div id="content_info">
+      <div id="content_head"><span style="color:red;font-weight:bold;">|</span>资料管理</div>
+      <div class="content_content">
+        <div id="content_center">
+        <div class="info_content_left">
+            <form action="" method="post">
+              <img src="/sphider/public/home/img/color.png" style="width:100px;height:100px"/>
+              <div id="file_div" style="width:100px; text-align:center">
+                <a href="#" class="file">更换头像
+                      <input type="file" id="img_file"/>
+                </a>
+            </div>
+              <!-- <input type="submit" value="更换头像"/> -->
+            </form>
+          </div>
+          <div class="info_content_right" >
+            <form action="" form="post" style="width:300px">
+            <span class="per_data">  用户名:&nbsp;&nbsp;</span><span class="per_data" id="username">yu</span><br/>
+            <span class="per_data">  密&nbsp;&nbsp;码&nbsp;&nbsp;:</span><span class="per_data" id="password">767499214@qq.com</span><br/>
+            <span class="per_data">邮&nbsp;&nbsp;箱&nbsp;&nbsp;:</span><span class="per_data" id="email">767499214@qq.com</span><br/>
+            <span class="per_data">手机号:&nbsp;&nbsp;</span><span class="per_data" id="number">133555555</span><br/>
+              <input type="button" name="" value="更改信息" onclick="changeContent()"/>
+              <input type="submit" name="" value="保存"/>
+            </form>
+          </div>
+        </div>
+        <div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <script>
+  function changeContent()
+  {
+      var name=document.getElementById("username");
+      var password=document.getElementById("password");
+      var email=document.getElementById("email");
+      var number=document.getElementById("number");
+      var names=name.innerHTML;
+      var passwords=password.innerHTML;
+      var emails=email.innerHTML;
+      var numbers=number.innerHTML;
+
+      name.innerHTML = "<input type='text' value='" + names + "'/>";
+      password.innerHTML = "<input type='password' value='" + passwords + "'/>";
+      email.innerHTML = "<input type='email' value='" + emails + "'/>";
+      number.innerHTML = "<input type='tel' value='" + numbers + "'/>"
+  }
+  </script>
+</body>
+
+</html>

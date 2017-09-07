@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/sphider/Public/home/css/info.css" type="text/css">
+  <link rel="stylesheet" href="/sphider/Public/home/css/bootstrap.min.css">
+  <script src="/sphider/Public/home/js/jquery.min.js"></script>
+  <script src="/sphider/Public/home/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div class="panel-group" id="accordion">
+    <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseOne')" onmouseout="hiding('collapseOne')">
+      <div class="panel-heading" id="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+       href="#collapseOne" style="color:#fff" >
+      数据来源
+        </a>
+         </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse">
+        <div class="panel-body">
+          <a href="/sphider/index.php/home/show/show_taobao" target="right">淘宝</a><br></br>
+          <a href="/sphider/index.php/home/show/show_jing" target="right">京东</a>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseTwo')" onmouseout="hiding('collapseTwo')">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+       href="#collapseTwo" style="color:#fff">
+      数据分析
+        </a>
+         </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body">
+          <a href="/sphider/index.php/home/per/per" target="right">数据展示</a><br></br>
+          <a href="/sphider/index.php/home/per/line" target="right">消费分析</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseThree')" onmouseout="hiding('collapseThree')">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+       <a data-toggle="collapse" data-parent="#accordion"
+          href="#collapseThree" style="color:#fff">
+         个人中心
+       </a>
+     </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse ">
+        <div class="panel-body">
+          <a href="#">个人信息</a><br></br>
+          <a href="#">修改信息</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapsefour')" onmouseout="hiding('collapsefour')">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+    <a data-toggle="collapse" data-parent="#accordion"
+       href="#collapsefour" style="color:#fff">
+      数据交易
+    </a>
+  </h4>
+      </div>
+      <div id="collapsefour" class="panel-collapse collapse ">
+        <div class="panel-body">
+          <a href="#">个人信息</a><br></br>
+          <a href="#">修改信息</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- <script type="text/javascript">
+    $(function() {
+      $('#collapseTwo').collapse('hide')
+    });
+    $(function() {
+      $('#collapseThree').collapse('hide')
+    });
+    $(function() {
+      $('#collapseOne').collapse('hide')
+    });
+    $(function() {
+      $('#collapsefour').collapse('hide')
+    });
+  </script> -->
+  <script type="text/javascript">
+    function spread(obj) {
+      var obj = document.getElementById(obj);
+      obj.style.display = "block";
+      // alert(111);
+    }
+
+    function hiding(obj) {
+      var obj = document.getElementById(obj);
+      obj.style.display = "none";
+      // alert(22);
+    }
+  </script>
+  <!-- <script>
+  $(function () {
+    $(".panel-heading").mouseover(function () {
+        $(this).addClass("open");
+    });
+
+    $(".panel-heading").mouseleave(function(){
+        $(this).removeClass("open");
+    })
+
+})
+</script> -->
+</body>
+
+</html>

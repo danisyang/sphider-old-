@@ -16,7 +16,18 @@
 		</tr>
 	</thead>
 	<tbody>
+	<volist name="list" id="list"> <!--volist name 是模板赋值变量名，在controler里定义， id是循环变量，可以随意指定-->
 		<tr class="active">
+			<td>{$list.name}</td>
+			<td>{$list.dealtime}</td>
+			<td>{$list.money_thing}</td>
+			<td>{$list.order_id}</td>
+			<td>衣服</td> <!--todo-->
+			<td>
+				<button type="button"   class="btn btn-xs btn-link " onclick="del(this)"> 删除</button>  </td>
+		</tr>
+	</volist>
+		<!--<tr class="active">
 			<td>产品1</td>
 			<td>23/11/2016</td>
 			<td>待发货</td>
@@ -89,7 +100,7 @@
       <td>化妆品</td>
 			<td>
 				<button type="button"   class="btn btn-xs btn-link " onclick="del(this)"> 删除</button>  </td>
-		</tr>
+		</tr>-->
 
 </table>
 </div>

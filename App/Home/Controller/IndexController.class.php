@@ -16,7 +16,7 @@ class IndexController extends ComController
 {
     public function index()
     {
-
+//       dump(M("auth_group")->select());
         $this->display();
     }
 
@@ -38,6 +38,14 @@ class IndexController extends ComController
       $id = M("data")->add($dat);
       dump($id);die;
     }
+
+  /*  public function listData(){
+
+        $list = M("data")->select();
+//        dump($list);die;
+        $this->assign("list",$list);
+        $this->display("listData");
+    }*/
     /*
     //一些前台DEMO
     //单页

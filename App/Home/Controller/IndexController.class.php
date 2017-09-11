@@ -38,14 +38,28 @@ class IndexController extends ComController
       $id = M("data")->add($dat);
       dump($id);die;
     }
+    public function register(){
+        echo "here";
+        dump($_POST);
+        if(!empty($_POST)){
+            print_r($_POST);
+        }
+    }
+    public function login(){
+        echo "logining";
+        dump($_POST);
+        if(!empty($_POST)){
+            print_r($_POST);
+        }
+    }
 
-  /*  public function listData(){
+    /*  public function listData(){
 
-        $list = M("data")->select();
-//        dump($list);die;
-        $this->assign("list",$list);
-        $this->display("listData");
-    }*/
+          $list = M("data")->select();
+  //        dump($list);die;
+          $this->assign("list",$list);
+          $this->display("listData");
+      }*/
     /*
     //一些前台DEMO
     //单页

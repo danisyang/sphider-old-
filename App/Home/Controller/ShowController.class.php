@@ -8,8 +8,10 @@ class ShowController extends ComController
 {
     public function show_taobao()
     {
-
-
+        $list_t = M("data")->select();
+        // dump($list);
+        // die();
+        $this->assign("list_t",$list_t); //对模板进行赋值，Volist 展示数据
         $this->display();
     }
     public function show_jing()

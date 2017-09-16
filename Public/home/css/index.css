@@ -8,7 +8,9 @@ body
   font-family: tahoma,"microsoft yahei","微软雅黑" !important;
 
 }
-
+a{
+  color: #fff;
+}
 .head
 {
   background-size: cover;
@@ -18,9 +20,29 @@ body
 }
 .header{
   width:100%;
-  height: 150px;
+  -webkit-box-shadow:1px 1px 1px black;
+  -moz-box-shadow:1px 1px 1px black;
   }
+.navbart
+{
+  height:60px;
+}
+.index_img
+{
+  width:35px;
+  height:35px;
+}
 
+.navbar-nav li a{
+  color:#fff;
+  font-size:15px;
+
+}
+.login_img
+{
+  width:25px;
+  height:25px;
+}
 .header_left
 {
   float: left;
@@ -39,6 +61,10 @@ body
   float: right;
   color: #fff;
   font-size: 20px;
+}
+.navbar-right li a{
+  font-size:15px;
+  color:#fff;
 }
 .header_right_second
 {
@@ -111,8 +137,11 @@ font-family:"Comic Sans MS";
 {
    position: absolute;
    top: 30%;
-   left: 40%;
+   /*left: 40%;*/
    width: 28%;
+   right:0;
+   left:0;
+   margin:auto;
    padding: 6px 16px;
    border: 2px solid #D6E9F1;
    background-color:#fff;
@@ -128,6 +157,18 @@ font-family:"Comic Sans MS";
   text-indent:1.5pc;
   line-height:21px;
 }
+.form-horizontal{
+  width:550px;
+}
+.col-sm-10
+{
+  width:200px;
+
+}
+.col-sm-10 input
+{
+ width:200px;
+}
 .oMask{
   display: none;
   position: absolute;
@@ -141,7 +182,15 @@ font-family:"Comic Sans MS";
   opacity:.80;
   filter: alpha(opacity=80);
 }
-#close
+#close_login
+{
+  float:right;
+  clear:both;
+  width:100%;
+  text-align:right;
+  margin:0 0 6px 0
+}
+#close_register
 {
   float:right;
   clear:both;
@@ -153,8 +202,11 @@ font-family:"Comic Sans MS";
 {
   position: absolute;
   top: 30%;
-  left: 40%;
+  /*left: 40%;*/
   width: 28%;
+  left:0;
+  right:0;
+  margin:auto;
   padding: 6px 16px;
   border: 1px solid #D6E9F1;
   background-color: rgb(8,24,103);
@@ -213,4 +265,13 @@ font-family:"Comic Sans MS";
   width:59%;
   height: 250px;
   padding-top: 100px;
+}
+.table
+{
+  margin:0 auto;
+}
+.table th
+{
+  width:900px;
+  height:50px;
 }

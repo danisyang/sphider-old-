@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/sphider/Public/home/css/bootstrap.min.css">
-  <link rel="stylwsheet" href="/sphider/Public/home/css/bootstrap.css">
+  <link rel="stylesheet" href="/sphider/Public/home/css/bootstrap.css">
   <link rel="stylesheet" href="/sphider/Public/home/css/info.css" >
   <script src="/sphider/Public/home/js/jquery-1.10.2.js"></script>
   <script src="/sphider/Public/home/js/jquery.min.js"></script>
   <script src="/sphider/Public/home/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/sphider/public/home/js/echarts.min.js"></script>
+  <script src="/sphider/public/home/js/echarts.min.js"></script>
+  <script src="/sphider/public/home/js/show.js"></script>
+  <script src="/sphider/public/home/js/info.js"></script>
 </head>
-
 <body>
-
   <div id="head">
     <nav class="navbar navbar header_nar" role="navigation" >
       <div class="container-fluid" onloadedmetadata="">
         <div class="navbar-header">
-          <a class="navbar-brand" style="color:#ff6e97;text-shadow: 5px 5px 5px #1A2D27;font-size:25px">GetData</a>
+          <p style="font-size:25px;color:#ff6e97;" >GetInformation</p>
         </div>
         <ul class="nav navbar-nav navbar-right">
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" onmouseover="this.style.cssText='color:#fff;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important'" style="color:#fff">user <b class="caret"></b></a>
-            <ul class="dropdown-menu"  style="min-width: 4px; ">
-              <li style="width:60px"><a id="action-1" href="#" onmouseover="this.style.cssText='color:#000;background:transparent!important;'" onmouseout="this.style.cssText='color:#000;background:transparent!important;'">设置</a></li>
-              <li style="width:60px"><a id="action-2" href="/sphider/index.php/home/index/index">退出</a></li>
+            <ul class="dropdown-menu">
+              <li ><a id="action-1" href="#" onmouseover="this.style.cssText='color:#000;background:transparent!important;'" onmouseout="this.style.cssText='color:#000;background:transparent!important;'">设置</a></li>
+              <li ><a id="action-2" href="/sphider/index.php/home/index/index">退出</a></li>
             </ul>
           </li>
           <li>
@@ -33,7 +34,6 @@
            退出
           </a>
           </li>
-
         </ul>
       </div>
     </nav>
@@ -41,7 +41,7 @@
   <div id="content_body">
     <div id="left">
       <div class="panel-group" id="accordion">
-        <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseOne')" onmouseout="hiding('collapseOne')">
+        <div class="panel panel" onmouseover="spread('collapseOne')" onmouseout="hiding('collapseOne')">
           <div class="panel-heading" id="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion"
@@ -57,7 +57,7 @@
             </div>
           </div>
         </div>
-        <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseTwo')" onmouseout="hiding('collapseTwo')">
+        <div class="panel panel"  onmouseover="spread('collapseTwo')" onmouseout="hiding('collapseTwo')">
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion"
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapseThree')" onmouseout="hiding('collapseThree')">
+        <div class="panel panel"  onmouseover="spread('collapseThree')" onmouseout="hiding('collapseThree')">
           <div class="panel-heading">
             <h4 class="panel-title">
          <a data-toggle="collapse" data-parent="#accordion"
@@ -91,7 +91,7 @@
           </div>
 
         </div>
-        <div class="panel panel" style="background:transparent!important;" onmouseover="spread('collapsefour')" onmouseout="hiding('collapsefour')">
+        <div class="panel panel" onmouseover="spread('collapsefour')" onmouseout="hiding('collapsefour')">
           <div class="panel-heading">
             <h4 class="panel-title">
       <a data-toggle="collapse" data-parent="#accordion"
@@ -112,173 +112,37 @@
       </div>
     </div>
     <div id="right">
-      <!-- <div id="table" style="width:90%">
-        <table class="table" style="margin-top:50px;margin-left:50px">
-          <caption style="text-align:center;font-size:20px;">淘宝订单展示</caption>
-          <thead>
-            <tr>
-              <th>产品名称</th>
-              <th>下单日期</th>
-              <th>订单金额</th>
-              <th>订单号</th>
-              <th>订单类别</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="active">
-              <td>产品1</td>
-              <td>23/11/2016</td>
-              <td>待发货</td>
-              <td>11111</td>
-              <td>衣服</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-            <tr class="success">
-              <td>产品2</td>
-              <td>10/11/2016</td>
-              <td>发货中</td>
-              <td>2222</td>
-              <td>电子产品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
 
-            </tr>
-            <tr class="warning">
-              <td>产品3</td>
-              <td>20/10/2016</td>
-              <td>待确认</td>
-              <td>3333</td>
-              <td>洗护用品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-            <tr class="danger">
-              <td>产品4</td>
-              <td>20/10/2016</td>
-              <td>已退货</td>
-              <td>4444</td>
-              <td>化妆品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-
-
-            <tr class="active">
-              <td>产品5</td>
-              <td>23/11/2016</td>
-              <td>待发货</td>
-              <td>11111</td>
-              <td>衣服</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-            <tr class="success">
-              <td>产品6</td>
-              <td>10/11/2016</td>
-              <td>发货中</td>
-              <td>2222</td>
-              <td>电子产品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-            <tr class="warning">
-              <td>产品7</td>
-              <td>20/10/2016</td>
-              <td>待确认</td>
-              <td>3333</td>
-              <td>洗护用品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-            </tr>
-            <tr class="danger">
-              <td>产品8</td>
-              <td>20/10/2016</td>
-              <td>已退货</td>
-              <td>4444</td>
-              <td>化妆品</td>
-              <td>
-                <button type="button"   class="btn btn-xs btn-link " onclick="del(this)"> 删除</button>  </td>
-            </tr>
-
-        </table>
-      </div>
-      <div id="footer" style="width:500px;float:right">
-      	<ul style="list-style:none;font-size:18px">
-      	<li class="ul_li"><a href="#">&lt;</a></li>
-      	<li class="ul_li"><a href="#">1</a></li>
-      	<li class="ul_li"><a href="#">2</a></li>
-      	<li class="ul_li"><a href="#">3</a></li>
-      	<li class="ul_li"><a href="#">4</a></li>
-      	<li class="ul_li"><a href="#">5</a></li>
-      	<li class="ul_li"><a href="#">&gt;</a></li>
-      </ul> -->
-      </div>
     </div>
-  </div>
-  <script type="text/javascript">
-
-      $("#source_tao").click(function() {
+    </div>
+<script>
+    $("#source_tao").click(function() {
         $("#right").load("/sphider/home/show/show_taobao.html");
     })
 
-   $(document).ready(function()
- {
-     $("#right").load("/sphider/home/show/show_taobao.html");
- })
+    $(document).ready(function()
+    {
+        $("#right").load("/sphider/home/show/show_taobao.html");
+    })
+
     $("#source_jing").click(function() {
-      $("#right").load("/sphider/home/show/show_jing.html");
+        $("#right").load("/sphider/home/show/show_jing.html");
     })
 
     $("#data_per").click(function() {
-      $("#right").load("/sphider/home/per/per.html");
+        $("#right").load("/sphider/home/per/per.html");
     })
 
     $("#data_line").click(function() {
-      $("#right").load("/sphider/home/per/line.html");
+        $("#right").load("/sphider/home/per/line.html");
     })
+
     $("#data_info").click(function()
-  {
-    $("#right").load("/sphider/home/person/showinfo.html");
-  })
-  </script>
-  <script type="text/javascript">
-    function spread(obj) {
-      var obj = document.getElementById(obj);
-      obj.style.display = "block";
-
-    }
-
-    function hiding(obj) {
-      var obj = document.getElementById(obj);
-      obj.style.display = "none";
-
-    }
-  </script>
-  <script  type="text/javascript">
-    function del(obj)
     {
-      var tr=obj.parentNode.parentNode;
-      tr.parentNode.removeChild(tr);
-    }
-  </script>
-  <script >
-  			var list = document.getElementsByClassName("ul_li");
+        $("#right").load("/sphider/home/person/showinfo.html");
+    })
 
-  			for(var i = 0;i<list.length;i++){
-  			list[i].onclick = function(){
-  			list[0].style.background="white";
-  			list[1].style.background="white";
-  			list[2].style.background="white";
-  			list[3].style.background="white";
-  			list[4].style.background="white";
-  			list[5].style.background="white";
-  			list[6].style.background="white";
-  			this.style.background = "red";
-  		}
-  			}
-  	</script>
-
+</script>
 </body>
 
 </html>

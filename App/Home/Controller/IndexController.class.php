@@ -27,6 +27,7 @@ class IndexController extends ComController
       $dealtime=I("dealtime");
       $link_href=I("link_href");
       $money_thing=I("money_thing");
+      $source_id=I("source_id");
       $dat["order_id"] = $order_id;
       $dat["name"] = $name;
       $dat["num"] = $num;
@@ -34,6 +35,7 @@ class IndexController extends ComController
       $dat["dealtime"]=$dealtime;
       $dat["link_href"]=$link_href;
       $dat["money_thing"]=$money_thing;
+      $dat["source_id"]=$source_id;
       $id = M("data")->add($dat);
       dump($id);die;
     }

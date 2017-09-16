@@ -23,6 +23,21 @@ body{
   background-position: 960px 540px;
   /*border:1px solid red;*/
 }
+.navbar-brand
+{
+  color:#ff6e97;
+  text-shadow: 5px 5px 5px #1A2D27;
+  font-size:25px;
+}
+.dropdown-menu{
+  min-width: 4px;
+}
+.dropdown-menu li{
+  width:60px;
+}
+
+
+
 #content_body
 {
   width:100%;
@@ -36,11 +51,11 @@ body{
   float: left;
   width:15%;
   /*border: 1px solid yellow;*/
-  background-color: #0c175c;
+  /*background-color: #0c175c;*/
   padding-top: 30px;
-  border: 1px solid;
-  box-shadow: 5px 10px 2px  #1a2d27;
-  color: #fff;
+  border: 2px solid #F5F5F5;
+  box-shadow: 5px 10px 2px  #F5F5F5;
+  /*color: #fff;*/
 }
 #right
 {
@@ -82,7 +97,10 @@ body{
   height:50px;
   display: inline-block;
 }
-
+.panel
+{
+  background:transparent!important;
+}
 .content_content
 {
   width:100%;
@@ -92,7 +110,7 @@ body{
 }
 .info_content_left
 {
-  width:200px;
+  width:150px;
   float: left;
 }
 .info_content_right
@@ -111,4 +129,71 @@ body{
   width: 550px;
   height:300px;
   /*border: 1px solid;*/
+}
+
+
+/*show_jing.html*/
+.table_div
+{
+  width:90% ;
+  overflow: hidden ;
+}
+.table-hover
+{
+  margin-top:50px;
+  margin-left:50px;
+}
+.jing_caption{
+  text-align:center;
+  font-size:20px;
+}
+#footer_jing{
+  width:500px;
+  float:right;
+}
+
+.product_name
+{
+  width:300px;
+  text-align: center;
+}
+.product_time
+{
+  width:200px;
+  text-align: center;
+}
+.product_money
+{
+  width:120px;
+  text-align: center;
+}
+.product_number
+{
+  width:150px;
+  text-align: center;
+}
+.product_type
+{
+  width:100px;
+  text-align: center;
+}
+.delete
+{
+  width:200px;
+  text-align: center;
+}
+
+
+
+
+/*show_taobao.html*/
+
+#ding_table
+{
+  width:90%;
+}
+.taobao_caption
+{
+  text-align:center;
+  font-size:20px;
 }

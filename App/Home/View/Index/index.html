@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/sphider/Public/home/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="/sphider/Public/home/css/index.css" type="text/css">
   <script src="/sphider/Public/home/js/jquery.min.js"></script>
   <script src="/sphider/Public/home/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="/sphider/Public/home/css/index.css" type="text/css" />
+  <script src="/sphider/Public/home/js/index.js"></script>
+
 </head>
 
 <body>
 
   <div class="head">
     <div class="header">
-      <header style="-webkit-box-shadow:1px 1px 1px black;
-                      -moz-box-shadow:1px 1px 1px black;">
-        <nav class="navbar navbart" style="height:60px;">
+      <header>
+        <nav class="navbar navbart">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -25,35 +26,24 @@
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="#">
-              <img src="/sphider/public/home/img/color.png" style="width:35px;height:35px"/>
+              <img class="index_img" src="/sphider/public/home/img/color.png"/>
               <!-- GetData -->
             </a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a style="color:#fff;" onmouseover="this.style.cssText='color:#fff;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff'">GetData</a></li>
-              <li><a href="#" style="font-size:15px;color:#fff;" onmouseover="this.style.cssText='color:#fff;background:transparent!important;font-size:20px;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">首页 <span class="sr-only">(current)</span></a></li>
-              <li><a href="#" style="font-size:15px;color:#fff" onmouseover="this.style.cssText='color:#fff;background:transparent!important;font-size:20px;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">Link</a></li>
+              <li ><a  onmouseover="this.style.cssText='color:#fff;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff'">GetData</a></li>
+              <li><a href="#"  onmouseover="this.style.cssText='color:#fff;background:transparent!important;font-size:20px;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">首页 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#"  onmouseover="this.style.cssText='color:#fff;background:transparent!important;font-size:20px;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">Link</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a data-toggle="modal" href="javascript:void(0)" onclick="show('login_div')" style="font-size:15px;color:#fff" onmouseover="this.style.cssText='color:#fff;font-size:20px;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">
-                <img src="/sphider/public/home/img/person.png" style="width:25px;height:25px"/>登录
+                <a data-toggle="modal" href="javascript:void(0)" onclick="show('login_div')"  onmouseover="this.style.cssText='color:#fff;font-size:20px;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">
+                <img class="login_img" src="/sphider/public/home/img/person.png" />登录
               </a>
               </li>
-              <li><a href="javascript:void(0)" onclick="show('register_div')" style="font-size:15px;color:#fff" onmouseover="this.style.cssText='color:#fff;font-size:20px;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">注册</a></li>
-
-                <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" onmouseover="this.style.cssText='color:#fff;background:transparent!important;'"onmouseout="this.style.cssText='color:white'">关于我们 <b class="caret"></b></a>
-                  <ul class="dropdown-menu" style="min-width: 4px; ">
-                    <li ><a id="action-1" href="#">联系我们</a></li>
-                    <li><a target="_top" href="/sphider/index.php/home/index/index">退出</a></li>
-                  </ul>
-
-              </li> -->
-
-
+              <li><a href="javascript:void(0)" onclick="show('register_div')"  onmouseover="this.style.cssText='color:#fff;font-size:20px;background:transparent!important;'" onmouseout="this.style.cssText='color:#fff;background:transparent!important;'">注册</a></li>
             </ul>
           </div>
         </div>
@@ -61,27 +51,27 @@
      </header>
     </div>
     <div id="oMask"></div>
-    <div id="login_div" style="position:absolute;right:0;left:0; margin:auto">
-      <div id="close"><a href="javascript:void(0)" onclick="hide('login_div')" style="color:#fff"> X</a></div>
+    <div id="login_div" >
+      <div id="close_login"><a href="javascript:void(0)" onclick="hide('login_div')" style="color:#fff"> X</a></div>
 
       <div id="login">
-        <form action="index.php/Home/Index/login" method="post" class="form-horizontal" role="form" style="width:550px;"><!--这个form是登陆页面的-->
+        <form class="form-horizontal" action="index.php/Home/Index/login"method="POST" role="form" >
 
           <div class="form-group">
 
             <label for="firstname" class="col-sm-2 control-label">用户名</label>
-            <div class="col-sm-10" style="width:200px">
-              <input type="text" name="name" class="form-control" id="firstname" placeholder="请输入用户名" style="width:200px">
+            <div class="col-sm-10" >
+              <input type="text" name="name" class="form-control" id="firstname" placeholder="请输入用户名" >
             </div>
           </div>
           <div class="form-group">
             <label for="lastname" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10" style="width:200px">
-              <input type="password" name="password" class="form-control" id="lastname" placeholder="请输入密码" style="width:200px">
+              <input type="password" name="password" class="form-control" id="firstpassword" placeholder="请输入密码" >
             </div>
           </div>
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10" style="width:200px">
+            <div class=" col-sm-offset-1 col-sm-10" >
               <div class="checkbox">
                 <label>
 					<input type="checkbox"> 请记住我
@@ -91,7 +81,7 @@
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">登录</button>
+              <button type="submit" class="btn btn-default" onclick="login_data()">登录</button>
             </div>
           </div>
         </form>
@@ -99,38 +89,47 @@
     </div>
 
 
-    <div id="register_div" style="position:absolute;left:0;right:0;margin:auto">
-      <div id="close"><a href="javascript:void(0)" onclick="hide('register_div')" style="color:#fff"> X</a></div>
+    <div id="register_div" >
+      <div id="close_register"><a href="javascript:void(0)" onclick="hide('register_div')" > X</a></div>
 
       <div id="register" >
-        <form action = "index.php/Home/Index/register" method="post" class="form-horizontal" role="form" style="width:550px;"> <!--这个是注册页面的form-->
+        <form class="form-horizontal" role="form" action="index.php/Home/Index/register" method="POST">
 
           <div class="form-group">
 
             <label for="firstname" class="col-sm-2 control-label">用户名</label>
-            <div class="col-sm-10" style="width:200px">
-              <input type="text" class="form-control" name="name" id="firstname" placeholder="请输入用户名" style="width:200px">
+            <div class="col-sm-10">
+              <input type="text" name="name" class="form-control" id="register_firstname" placeholder="请输入用户名" >
             </div>
           </div>
           <div class="form-group">
             <label for="lastname" class="col-sm-2 control-label">密码</label>
-            <div class="col-sm-10" style="width:200px">
-              <input type="password" name="password" class="form-control"  id="lastname" placeholder="请输入密码" style="width:200px">
+            <div class="col-sm-10" >
+              <input type="password" name="password" class="form-control" id="register_lastname" placeholder="请输入密码" >
             </div>
           </div>
           <div class="form-group">
             <label for="lastname" class="col-sm-2 control-label">手机号</label>
-            <div class="col-sm-10" style="width:200px">
+            <div class="col-sm-10" >
               <input type="text" name="phone" class="form-control" id="number" placeholder="请输入手机号" style="width:200px">
             </div>
           </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10" style="width:200px">
-            </div>
-          </div>
+          <!--<div class="form-group">-->
+            <!--<div class="col-sm-offset-2 col-sm-10" style="width:200px">-->
+              <!--<div class="radio">-->
+          <!--<label>-->
+          <!--<input type="radio" name="sex" value="">男-->
+          <!--</label>-->
+        <!--&nbsp;&nbsp;&nbsp;&nbsp;-->
+         <!--<label>-->
+           <!--<input type="radio" name="sex" value="">女-->
+         <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">注册</button>
+              <button type="submit" class="btn btn-default" onclick="register()">注册</button>
             </div>
           </div>
         </form>
@@ -182,20 +181,6 @@
 
       </div>
 
-      <!-- <div class="content" name="content" id="content" href="content">
-    <div class="content_first">
-      <div class="content_first_left">
-
-      </div>
-      <div class="content_first_right">
-        清楚的了解到淘宝上的个人信息
-      </div>
-      </div>
-    </div>
-    <div class="content_second">
-
-    </div> -->
-      <!-- </div> -->
 
 
       <div class="footer">
@@ -206,43 +191,29 @@
         </div>
         <div class="footer_right">
 
-          <table class="table table" style="margin:0 auto;">
+          <table class="table table" >
             <tr>
-              <th style="width:900px;height:50px">关于</th>
-              <th style="width:900px;height:50px">联系方式</th>
-              <th style="width:900px;height:50px">赞助商</th>
+              <th >关于</th>
+              <th >联系方式</th>
+              <th >赞助商</th>
             </tr>
             <tr>
-              <td style="height:50px">关于我们</td>
-              <td style="height:50px">767499214@qq.com</td>
-              <td style="height:50px"></td>
+              <td>关于我们</td>
+              <td >767499214@qq.com</td>
+              <td ></td>
             </tr>
             <tr>
-              <td style="height:50px">广告合作</td>
-              <td style="height:50px"></td>
-              <td style="height:50px"></td>
+              <td >广告合作</td>
+              <td ></td>
+              <td ></td>
             </tr>
           </table>
 
 
         </div>
       </div>
-      <script>
-        function show(tag) {
-          var login = document.getElementById(tag);
-          var oMask = document.getElementById('oMask');
-          login.style.display = 'block';
-          oMask.style.display = 'block';
-        }
-
-        function hide(tag) {
-          var tag = document.getElementById(tag);
-          var oMask = document.getElementById('oMask');
-          tag.style.display = 'none';
-          oMask.style.display = 'none';
-        }
-      </script>
-
-</body>
+    </div>
+  </div>
+  </body>
 
 </html>

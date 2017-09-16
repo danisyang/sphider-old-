@@ -4,96 +4,40 @@
 <head>
 </head>
 
-<body style="width:100%">
-<div id="ding_table" style="width:90%">
-  <table class="table" style="margin-top:50px;margin-left:50px">
-    <caption style="text-align:center;font-size:20px;">淘宝订单展示</caption>
+<body >
+<div class="table-responsive table_div" >
+  <table class="table table-hover">
+    <caption class="taobao_caption" >{$Think.session.mg_username}淘宝订单展示</caption>
     <thead>
       <tr>
-        <th>产品名称</th>
-        <th>下单日期</th>
-        <th>订单金额</th>
-        <th>订单号</th>
-        <th>订单类别</th>
+        <td style="width:50px"></td>
+        <td class="product_name">产品名称</td>
+        <td class="product_time">下单日期</td>
+        <td class="product_money"> 订单金额</td>
+        <td class="product_number">订单号</td>
+        <td class="product_type">订单类别</td>
+        <td class="delete"></td>
       </tr>
     </thead>
     <tbody>
+      <volist name="list_t" id="list_t">
       <tr class="active">
-        <td>产品1</td>
-        <td>23/11/2016</td>
-        <td>待发货</td>
-        <td>11111</td>
-        <td>衣服</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-      </tr>
-      <tr class="success">
-        <td>产品2</td>
-        <td>10/11/2016</td>
-        <td>发货中</td>
-        <td>2222</td>
-        <td>电子产品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-
-      </tr>
-      <tr class="warning">
-        <td>产品3</td>
-        <td>20/10/2016</td>
-        <td>待确认</td>
-        <td>3333</td>
-        <td>洗护用品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-      </tr>
-      <tr class="danger">
-        <td>产品4</td>
-        <td>20/10/2016</td>
-        <td>已退货</td>
-        <td>4444</td>
-        <td>化妆品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
+        <if condition="$list_t.source_id eq 1">
+        <td style="width:50px;">{$list_t.id}</td>
+        <td class="product_name">{$list_t.name}</td>
+        <td class="product_time">{$list_t.dealtime}</td>
+        <td class="product_money">{$list_t.money_thing}</td>
+        <td class="product_number">{$list_t.order_id}</td>
+        <td class="product_type">衣服</td>
+        <td class="delete">
+          <!-- <button type="button" class="btn btn-link"  onclick="del(this)">删除</button>  -->
+          <button type="button" class="btn btn-link"  onclick="del(this)">删除</button> 
+        </td>
+        </if>
       </tr>
 
-
-      <tr class="active">
-        <td>产品5</td>
-        <td>23/11/2016</td>
-        <td>待发货</td>
-        <td>11111</td>
-        <td>衣服</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-      </tr>
-      <tr class="success">
-        <td>产品6</td>
-        <td>10/11/2016</td>
-        <td>发货中</td>
-        <td>2222</td>
-        <td>电子产品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-      </tr>
-      <tr class="warning">
-        <td>产品7</td>
-        <td>20/10/2016</td>
-        <td>待确认</td>
-        <td>3333</td>
-        <td>洗护用品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link" onclick="del(this)">删除</button>  </td>
-      </tr>
-      <tr class="danger">
-        <td>产品8</td>
-        <td>20/10/2016</td>
-        <td>已退货</td>
-        <td>4444</td>
-        <td>化妆品</td>
-        <td>
-          <button type="button"   class="btn btn-xs btn-link " onclick="del(this)"> 删除</button>  </td>
-      </tr>
-
+    </volist>
+    </tbody>
   </table>
 </div>
 <div id="footer" style="width:500px;float:right">
@@ -107,13 +51,7 @@
 	<li class="ul_li"><a href="#">&gt;</a></li>
 </ul>
 </div>
-  <script  type="text/javascript">
-    function del(obj)
-    {
-      var tr=obj.parentNode.parentNode;
-      tr.parentNode.removeChild(tr);
-    }
-  </script>
+
   <script >
   			var list = document.getElementsByClassName("ul_li");
 

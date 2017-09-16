@@ -16,7 +16,6 @@ class IndexController extends ComController
 {
     public function index()
     {
-//       dump(M("auth_group")->select());
         $this->display();
     }
 
@@ -39,86 +38,77 @@ class IndexController extends ComController
       dump($id);die;
     }
     public function register(){
-        echo "here";
-        dump($_POST);
-        if(!empty($_POST)){
-            print_r($_POST);
+    //注册数据传输到数据库中去
+        $infomation = M('User');
+            if(!empty($_POST)){
+            $arg = $_POST;
+            $z = $infomation->add($arg);
+            if($z){
+                echo "success";
+            }else{
+                echo "failure";
+            }
         }
     }
     public function login(){
-        echo "logining";
-        dump($_POST);
+
         if(!empty($_POST)){
             print_r($_POST);
         }
-    }
-
-    /*  public function listData(){
-
-          $list = M("data")->select();
-  //        dump($list);die;
-          $this->assign("list",$list);
-          $this->display("listData");
-      }*/
-    /*
-    //一些前台DEMO
-    //单页
-    public function single($aid){
-
-        $aid = intval($aid);
-        $article = M('article')->where('aid='.$aid)->find();
-        $this->assign('article',$article);
-        $this->assign('nav',$aid);
-        $this -> display();
-    }
-    //文章
-    public function article($aid){
-
-        $aid = intval($aid);
-        $article = M('article')->where('aid='.$aid)->find();
-        $sort = M('asort')->field('name,id')->where("id='{$article['sid']}'")->find();
-        $this->assign('article',$article);
-        $this->assign('sort',$sort);
-        $this -> display();
-    }
-
-    //列表
-    public function articlelist($sid='',$p=1){
-        $sid = intval($sid);
-        $p = intval($p)>=1?$p:1;
-        $sort = M('asort')->field('name,id')->where("id='$sid'")->find();
-        if(!$sort) {
-            $this -> error('参数错误！');
+        $username = isset($_POST['name']) ? trim($_POST['name']) : '';
+        //$password = isset($_POST['password']) ? password(trim($_POST['password'])) : '';
+        $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+        if ($username == '') {
+            $this->error('用户名不能为空！', U("Index/index"));
+        } elseif ($password == '') {
+            $this->error('密码必须！', U("Index/index"));
         }
-        $sorts = M('asort')->field('id')->where("id='$sid' or pid='$sid'")->select();
-        $sids = array();
-        foreach($sorts as $k=>$v){
-            $sids[] = $v['id'];
+
+        $model = M("User");
+        $condition['name']=$username;
+        echo 'pswd';
+        dump($password);
+        $condition['password']=$password;
+        dump($condition);
+        $ans = $model->field('id,name')->where($condition)->find();
+        dump($ans);
+        if ($ans){
+            echo 'login success!';
+            session("mg_username",$ans['name']);
+            session("mg_id",$ans['id']);
+            $this->success("登陆成功",U('Info/info'));
+        } else {
+            echo 'login error';
+            $this->error("登陆失败",U('Index/index'));
         }
-        $sids = implode(',',$sids);
+        /*if ($user) {
+            $salt = C("COOKIE_SALT");
+            $ip = get_client_ip();
 
-        $m = M('article');
-        $pagesize = 2;#每页数量
-        $offset = $pagesize*($p-1);//计算记录偏移量
-        $count = $m->where("sid in($sids)")->count();
-        $list  = $m->field('aid,title,description,thumbnail,t')->where("sid in($sids)")->order("aid desc")->limit($offset.','.$pagesize)->select();
-        //echo $m->getlastsql();
-        $params = array(
-            'total_rows'=>$count, #(必须)
-            'method'    =>'html', #(必须)
-            'parameter' =>"/list-{$sid}-?.html",  #(必须)
-            'now_page'  =>$p,  #(必须)
-            'list_rows' =>$pagesize, #(可选) 默认为15
-        );
-        $page = new Page($params);
-        $this->assign('list',$list);
-        $this->assign('page',$page->show(1));
-        $this->assign('sort',$sort);
-        $this->assign('p',$p);
-        $this->assign('n',$count);
-
-        $this -> display();
+            $ua = $_SERVER['HTTP_USER_AGENT'];
+            session_start();
+            session('uid',$user['uid']);
+            //加密cookie信息
+            $auth = password($user['uid'].$user['user'].$ip.$ua.$salt);
+            if ($remember) {
+                cookie('auth', $auth, 3600 * 24 * 365);//记住我
+            } else {
+                cookie('auth', $auth);
+            }
+            addlog('登录成功。');
+            $url = U('index/index');
+            header("Location: $url");
+            exit(0);
+        } else {
+            addlog('登录失败。', $username);
+            $this->error('登录失败，请重试！', U("login/index"));
+        }*/
     }
-    */
+
+
+    public function logout(){
+        session(null);//删除session信息
+        $this->redirect("Index/index");//跳转到主页
+    }
 }
  ?>

@@ -14,6 +14,8 @@ class ShowController extends ComController
     }
     public function show_jing()
     {
+        $past = M("data");
+       // dump($past);
         $list = M("data")->select();
        // dump($list);
        // die();

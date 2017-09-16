@@ -16,7 +16,6 @@ class InfoController extends ComController
 {
     public function info()
     {
-
         $this->display();
     }
     public function head()

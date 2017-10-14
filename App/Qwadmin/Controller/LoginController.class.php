@@ -52,10 +52,14 @@ class LoginController extends ComController
             session('uid',$user['uid']);
             //加密cookie信息
             $auth = password($user['uid'].$user['user'].$ip.$ua.$salt);
+            $name = $user['user']; //name 记录user的name值。
+            //$auth = ($user['user']);//用新的cookie代替上面的值 10/12/2017
             if ($remember) {
                 cookie('auth', $auth, 3600 * 24 * 365);//记住我
+                cookie('name',$name,3600 * 24 * 365); //设置的用户名cookie
             } else {
                 cookie('auth', $auth);
+                cookie('name',$name);
             }
             addlog('登录成功。');
             $url = U('index/index');

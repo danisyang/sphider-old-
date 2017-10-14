@@ -145,7 +145,8 @@ font-family:"Comic Sans MS";
    padding: 6px 16px;
    border: 2px solid #D6E9F1;
    background-color:#fff;
-   background-image: url("/sphider/public/home/img/sky.jpg");
+   background-color: rgb(8,24,103);
+   /*background-image: url("/sphider/public/home/img/sky.jpg");*/
    z-index:1002;
    overflow: auto;
    display: none;
@@ -215,6 +216,13 @@ font-family:"Comic Sans MS";
   display: none;
   border-radius:10px;
   overflow: hidden;
+}
+.control-label
+{
+  color:#ffffff;
+}
+#remember{
+  color:#ffffff;
 }
 /*.content_first
 {

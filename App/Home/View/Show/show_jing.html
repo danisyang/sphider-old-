@@ -21,7 +21,6 @@
 	<volist name="list" id="list"><!--volist name 是模板赋值变量名，在controler里定义， id是循环变量，可以随意指定-->
 	<tbody>
 		<tr class="active">
-			<if condition="$list.source_id eq 0">
 			 <td style="width:50px;">{$list.id}</td>
 			<td class="product_name">{$list.name}</td>
 			<td class="product_time">{$list.dealtime}</td>
@@ -40,14 +39,15 @@
 </table>
 </div>
 <div id="footer_jing">
-	<ul style="list-style:none;font-size:18px">
-	<li class="ul_li"><a href="#">&lt;</a></li>
-	<li class="ul_li"><a href="#">1</a></li>
-	<li class="ul_li"><a href="#">2</a></li>
-	<li class="ul_li"><a href="#">3</a></li>
-	<li class="ul_li"><a href="#">4</a></li>
-	<li class="ul_li"><a href="#">5</a></li>
-	<li class="ul_li"><a href="#">&gt;</a></li>
+	<ul style="list-style:none;font-size:18px;text-align:center">
+	<!--<li class="ul_li"><a href="#">&lt;</a></li>-->
+	<!--<li class="ul_li"><a href="#">1</a></li>-->
+	<!--<li class="ul_li"><a href="#">2</a></li>-->
+	<!--<li class="ul_li"><a href="#">3</a></li>-->
+	<!--<li class="ul_li"><a href="#">4</a></li>-->
+	<!--<li class="ul_li"><a href="#">5</a></li>-->
+	<!--<li class="ul_li"><a href="#">&gt;</a></li>-->
+	{$page}
 </ul>
 </div>
 </body>

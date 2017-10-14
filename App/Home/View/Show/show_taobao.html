@@ -22,7 +22,6 @@
     <tbody>
       <volist name="list_t" id="list_t">
       <tr class="active">
-        <if condition="$list_t.source_id eq 1">
         <td style="width:50px;">{$list_t.id}</td>
         <td class="product_name">{$list_t.name}</td>
         <td class="product_time">{$list_t.dealtime}</td>
@@ -42,13 +41,7 @@
 </div>
 <div id="footer" style="width:500px;float:right">
 	<ul style="list-style:none;font-size:18px">
-	<li class="ul_li"><a href="#">&lt;</a></li>
-	<li class="ul_li"><a href="#">1</a></li>
-	<li class="ul_li"><a href="#">2</a></li>
-	<li class="ul_li"><a href="#">3</a></li>
-	<li class="ul_li"><a href="#">4</a></li>
-	<li class="ul_li"><a href="#">5</a></li>
-	<li class="ul_li"><a href="#">&gt;</a></li>
+	{$page}
 </ul>
 </div>
 

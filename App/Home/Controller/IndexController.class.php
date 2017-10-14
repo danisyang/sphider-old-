@@ -28,6 +28,8 @@ class IndexController extends ComController
       $link_href=I("link_href");
       $money_thing=I("money_thing");
       $source_id=I("source_id");
+      $user_name = I("user_name");
+
       $dat["order_id"] = $order_id;
       $dat["name"] = $name;
       $dat["num"] = $num;
@@ -36,6 +38,7 @@ class IndexController extends ComController
       $dat["link_href"]=$link_href;
       $dat["money_thing"]=$money_thing;
       $dat["source_id"]=$source_id;
+      $dat["user_name"] = $user_name;
       $id = M("data")->add($dat);
       dump($id);die;
     }
@@ -44,9 +47,10 @@ class IndexController extends ComController
         $infomation = M('User');
             if(!empty($_POST)){
             $arg = $_POST;
+            dump($arg);
             $z = $infomation->add($arg);
             if($z){
-                echo "success";
+                $this->redirect('Info/info');
             }else{
                 echo "failure";
             }
@@ -54,9 +58,6 @@ class IndexController extends ComController
     }
     public function login(){
 
-        if(!empty($_POST)){
-            print_r($_POST);
-        }
         $username = isset($_POST['name']) ? trim($_POST['name']) : '';
         //$password = isset($_POST['password']) ? password(trim($_POST['password'])) : '';
         $password = isset($_POST['password']) ? trim($_POST['password']) : '';
@@ -68,18 +69,22 @@ class IndexController extends ComController
 
         $model = M("User");
         $condition['name']=$username;
-        echo 'pswd';
-        dump($password);
         $condition['password']=$password;
-        dump($condition);
         $ans = $model->field('id,name')->where($condition)->find();
-        dump($ans);
-        if ($ans){
+
+        $verify = new \Think\Verify();
+
+
+        if ($ans&&($verify->check($_POST['checkcode']))){
             echo 'login success!';
             session("mg_username",$ans['name']);
             session("mg_id",$ans['id']);
-            $this->success("登陆成功",U('Info/info'));
-        } else {
+            $this->redirect('Info/info');
+        } else if(!$verify->check($_POST['checkcode'])){
+            echo '验证码错误';
+            $this->error("验证码错误",'index.php/Home/Index');
+        }
+        else{
             echo 'login error';
             $this->error("登陆失败",U('Index/index'));
         }
@@ -106,11 +111,36 @@ class IndexController extends ComController
             $this->error('登录失败，请重试！', U("login/index"));
         }*/
     }
+    public function verifyImg(){
+        $config =	array(
+
+            'fontSize'  =>  15,              // 验证码字体大小(px)
+            'useCurve'  =>  true,            // 是否画混淆曲线
+            'useNoise'  =>  false,            // 是否添加杂点
+            'imageH'    =>  34,               // 验证码图片高度
+            'imageW'    =>  200,               // 验证码图片宽度
+            'length'    =>  4,               // 验证码位数
+            'fontttf'   =>  '',              // 验证码字体，不设置随机获取
+            'bg'        =>  array(243, 251, 254),  // 背景颜色
+        );
+        $verify = new \Think\Verify($config);
+        $verify ->entry();
+        dump($verify);
+    }
 
 
     public function logout(){
         session(null);//删除session信息
         $this->redirect("Index/index");//跳转到主页
+    }
+    public function registerpage(){
+        $this->display();
+    }
+    public function doregisterpage(){
+        dump($_POST);
+        if($_POST){
+            $this->redirect('Info/info');
+        }
     }
 }
  ?>

@@ -1,18 +1,14 @@
 <?php
 /**
- *
- * 版权所有：恰维网络<qwadmin.qiawei.com>
- * 作    者：寒川<hanchuan@qiawei.com>
- * 日    期：2016-01-29
- * 版    本：1.0.0
- * 功能说明：自定义变量
- * tb数据展示控制器
- *
- **/
-
+ * Created by PhpStorm.
+ * User: Dennis Yang
+ * Date: 2017/9/28
+ * Time: 11:08
+ * 功能：jd数据展示控制器
+ */
 namespace Qwadmin\Controller;
 
-class VariableController extends ComController
+class VariableJdController extends ComController
 {
 
     public function index()
@@ -22,7 +18,7 @@ class VariableController extends ComController
         $this->assign('vars', $vars);
         $this->display();*/
         $Data = M("data");
-        $condition['source_id'] = '1';
+        $condition['source_id'] = '0';
         $count = $Data->where($condition)->count();
         $Page = new \Think\Page($count,20);
         $show = $Page->show();
